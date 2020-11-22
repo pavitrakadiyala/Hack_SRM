@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML Deployment</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+<body>
+ <div class="login" style="width: 800px; left: 35%">
+	<h1>Parental Discretion Model</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form name="myform" action="{{ url_for('predict')}}"method="post">
+    	 
+      <textarea name="user_text" placeholder="Enter the text" id="user_text" rows="10" cols="80" required="required"></textarea>
+
+      <button type="submit" class="btn btn-primary btn-block btn-large" style="width: 60%; left: 35%; margin: 20px;">Predict</button>
+    </form>
+
+   <br>
+  
+   <br>
+   {{ prediction_text }}
+ </div>
+
+</body>
+</html>
